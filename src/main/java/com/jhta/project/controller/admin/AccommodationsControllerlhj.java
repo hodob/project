@@ -67,7 +67,7 @@ public class AccommodationsControllerlhj {
 				map.put("msg", "숙소 정보 변경에 실패했습니다.");
 			}
 	     } else {
-	    	String path = sc.getRealPath("/resources/images/accommodations");
+	    	String path = sc.getRealPath("/resources/images/accommodations"); //\\\\10.100.202.45\\server
 			String orgfilename = fileList.get(0).getOriginalFilename();// 전송된 메인 사진 파일명
 			String savefilename = UUID.randomUUID() + "_" + orgfilename;// 저장할 파일명
 			try {

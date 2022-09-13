@@ -51,7 +51,8 @@ public class MypageController_kjy {
 	public @ResponseBody int profiledel(HttpServletRequest req, HttpServletResponse resp){
 		HttpSession session=req.getSession();
 		String mid=(String)session.getAttribute("mid");
-		String dir=sc.getRealPath("/resources/images/members");
+		String dir=sc.getRealPath("Y:\\\\team03\\\\images\\\\members");
+
 		MypageVo_kjy vo=service.list(mid);
 		File fi=new File(dir+"\\"+vo.getMprofile());
 		fi.delete();
@@ -68,10 +69,13 @@ public class MypageController_kjy {
 		HashMap<String, Object> map=new HashMap<String,Object>();
 		int n=0;
 		try{
-			String dir=sc.getRealPath("/resources/images/members");
+
+			String dir="Y:\\\\team03\\\\images\\\\members";
 			String orgfilename=filename.getOriginalFilename();
 			String savefilename=UUID.randomUUID()+"_"+orgfilename;
+
 			InputStream is=filename.getInputStream();
+
 			FileOutputStream fos=new FileOutputStream(dir+"\\"+savefilename);
 			FileCopyUtils.copy(is, fos);
 			is.close();
